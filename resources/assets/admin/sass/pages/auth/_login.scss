@@ -1,0 +1,134 @@
+.login {
+    display: flex;
+    height: 100vh;
+
+    .login-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .login-header {
+            .logo-box {
+                .logo {
+                    width: 100px; // Adjust as needed
+                }
+            }
+
+            .title {
+                color: $white;
+            }
+        }
+
+        .login-content {
+            .form-group {
+                position: relative;
+                padding: 15px 0 0;
+                margin-top: 10px;
+                width: 100%;
+
+                .field-label {
+                    position: absolute;
+                    top: 0;
+                    display: block;
+                    transition: 0.1s;
+                    font-size: 1rem;
+                    color: $white;
+                }
+
+                .form-field {
+                    width: 350px;
+                    border: 0;
+                    border-bottom: 2px solid $white;
+                    outline: 0;
+                    font-size: 1.3rem;
+                    color: $white;
+                    padding: 7px 0;
+                    background-color: transparent;
+                    transition: ease-in-out .3s;
+
+                    &::placeholder {
+                        color: transparent;
+                    }
+
+                    &:placeholder-shown ~ .form-label {
+                        font-size: 1.3rem;
+                        cursor: text;
+                        top: 20px;
+                    }
+
+                    &:focus {
+                        ~ .form-label {
+                            position: absolute;
+                            top: 0;
+                            display: block;
+                            transition: 0.1s;
+                            font-size: 1rem;
+                            color: $white;
+                            font-weight: 700;
+                        }
+
+                        border-color: $primary;
+                    }
+                }
+
+                .login-btn {
+                    width: 100%;
+                    padding: 10px;
+                    background: $white;
+                    border: none;
+                    color: $black;
+                    font-weight: 700;
+                    cursor: pointer;
+                    border-radius: 50px;
+                    transition: ease-in-out .2s;
+
+                    &:hover {
+                        background: $primary;
+                    }
+                }
+            }
+
+            .reset-password-link {
+                color: $white;
+                text-decoration: none;
+
+                .link {
+                    color: lighten($primary, 30%);
+                    transition: ease-in-out .3s;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: lighten($primary, 50%);
+                    }
+                }
+            }
+        }
+    }
+
+    .artwork {
+        flex: 1;
+        background-color: darken($primary, 20%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .astronaut {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 100px; // Adjust as needed
+        }
+
+        .planet {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px; // Adjust as needed
+        }
+
+        // Add other artwork styles here
+    }
+}

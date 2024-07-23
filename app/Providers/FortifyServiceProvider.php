@@ -78,6 +78,8 @@
             Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
             Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
+            Fortify::loginView(fn() => view('admin.auth.login'));
+
             RateLimiter::for('login', function (Request $request) {
                 $throttleKey = Str::transliterate($this->throttleKey($request));
 
