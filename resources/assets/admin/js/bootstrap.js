@@ -18,6 +18,10 @@
  * Documentation: https://axios-http.com/docs/intro
  */
 import axios from 'axios';
+
+window.axios = axios;
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 /*
  * Importing jQuery
  *
@@ -34,6 +38,9 @@ import axios from 'axios';
  * Documentation: https://jquery.com/
  */
 import $ from 'jquery';
+
+window.$ = $;
+
 /*
  * Importing Alpine.js
  *
@@ -49,6 +56,10 @@ import $ from 'jquery';
  * Documentation: https://alpinejs.dev/start
  */
 import Alpine from 'alpinejs';
+
+Alpine.start();
+window.Alpine = Alpine;
+
 /*
  * Importing Bootstrap
  *
@@ -82,13 +93,5 @@ import 'bootstrap';
  * Documentation: https://d3js.org/
  */
 import * as d3 from 'd3';
-
-window.axios = axios;
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-window.$ = $;
-
-Alpine.start();
-window.Alpine = Alpine;
 
 window.d3 = d3;
