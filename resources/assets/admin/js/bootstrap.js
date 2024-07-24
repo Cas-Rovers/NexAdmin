@@ -48,7 +48,7 @@ import $ from 'jquery';
  *
  * Documentation: https://alpinejs.dev/start
  */
-import Alpine from 'alpinejs'
+import Alpine from 'alpinejs';
 /*
  * Importing Bootstrap
  *
@@ -89,6 +89,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.$ = $;
 
 Alpine.start();
-window.Alpine = Alpine
+window.Alpine = Alpine;
 
 window.d3 = d3;
