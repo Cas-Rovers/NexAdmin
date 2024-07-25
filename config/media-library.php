@@ -40,7 +40,7 @@ return [
      * When enabled, media collections will be serialised using the default
      * laravel model serialization behaviour.
      *
-     * Keep this option disabled if using Media Library Pro components (https://medialibrary.pro)
+     * Keep this option disabled if using Media Library Pro Components (https://medialibrary.pro)
      */
     'use_default_collection_serialization' => false,
 
@@ -54,7 +54,7 @@ return [
     /*
      * When enabled, Media Library Pro will only process temporary uploads that were uploaded
      * in the same session. You can opt to disable this for stateless usage of
-     * the pro components.
+     * the pro Components.
      */
     'enable_temporary_uploads_session_affinity' => true,
 
@@ -245,7 +245,7 @@ return [
 
     /*
      * When enabling this option, a route will be registered that will enable
-     * the Media Library Pro Vue and React components to move uploaded files
+     * the Media Library Pro Vue and React Components to move uploaded files
      * in a S3 bucket to their right place.
      */
     'enable_vapor_uploads' => env('ENABLE_MEDIA_LIBRARY_VAPOR_UPLOADS', false),

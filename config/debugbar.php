@@ -132,7 +132,7 @@
          | Custom Error Handler for Deprecated warnings
          |--------------------------------------------------------------------------
          |
-         | When enabled, the Debugbar shows deprecated warnings for Symfony components
+         | When enabled, the Debugbar shows deprecated warnings for Symfony Components
          | in the Messages tab.
          |
          */
@@ -236,7 +236,7 @@
                 'data' => true,        //true for all data, 'keys' for only names, false for no parameters.
                 'group' => 50,          // Group duplicate views. Pass value to auto-group, or true/false to force
                 'exclude_paths' => [    // Add the paths which you don't want to appear in the views
-                    'vendor/filament'   // Exclude Filament components by default
+                    'vendor/filament'   // Exclude Filament Components by default
                 ],
             ],
             'route' => [
