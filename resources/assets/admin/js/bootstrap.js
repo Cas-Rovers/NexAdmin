@@ -64,12 +64,12 @@ window.Alpine = Alpine;
  * Importing Bootstrap
  *
  * Bootstrap is a popular front-end framework for developing responsive and mobile-first websites.
- * It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+ * It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface Components.
  *
  * Key Features:
  * – Responsive design
  * – Mobile-first approach
- * – Extensive prebuilt components
+ * – Extensive prebuilt Components
  * – Powerful JavaScript plugins
  * – Customizable via Sass variables and mixins
  *
@@ -95,3 +95,26 @@ import 'bootstrap';
 import * as d3 from 'd3';
 
 window.d3 = d3;
+
+/*
+ * Toast Notification Utility
+ *
+ * This script imports the `showToast` function, which enables the creation and management of toast notifications within a web application.
+ * Toast notifications provide brief, non-intrusive messages that offer feedback to users and automatically disappear after a set duration,
+ * although they can be manually dismissed by the user.
+ *
+ * Features:
+ * – Customizable Types: Supports various notification types including info, warning, error, and success.
+ * – Dynamic Icons: Icons are automatically chosen based on the notification type.
+ * – Auto-Close Functionality: Notifications automatically close after a specified time, with a progress bar showing the remaining duration.
+ * – Manual Close Option: Users can close notifications manually via a close button.
+ * – Hover Interaction: The progress bar pauses when hovered over and resumes when the mouse is moved away.
+ *
+ * Usage Instructions:
+ * – Import the `showToast` function from `./components/toast.js`.
+ * – Assign `showToast` to `window.showToast` to make it globally accessible.
+ * – Display a notification by calling `window.showToast(type, title, message)`, where `type` specifies the notification type, `title` is the notification's title, and `message` is the notification's content.
+ */
+import { showToast } from './components/toast.js';
+
+window.showToast = showToast;

@@ -17,6 +17,7 @@
             </div>
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 {{-- Top navbar here --}}
+                <x-admin::toast />
                 <div class="content">
                     @yield('content')
                 </div>
@@ -24,7 +25,10 @@
         @endauth
         @guest
             <div class="col-md-12">
-                @yield('content')
+                <x-admin::toast />
+                <div class="content">
+                    @yield('content')
+                </div>
             </div>
         @endguest
     </div>

@@ -2,6 +2,7 @@
 
     namespace App\Providers;
 
+    use Illuminate\Support\Facades\Blade;
     use Illuminate\Support\Facades\Gate;
     use Illuminate\Support\ServiceProvider;
 
@@ -25,5 +26,8 @@
             Gate::before(function ($user, $ability) {
                 return $user->hasRole('Super Admin') ? true : null;
             });
+
+            Blade::componentNamespace('App\\View\\Components\\Admin', 'admin');
+            Blade::componentNamespace('App\\View\\Components\\Frontend', 'frontend');
         }
     }

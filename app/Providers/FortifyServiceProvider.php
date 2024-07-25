@@ -12,6 +12,7 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Hash;
     use Illuminate\Support\Facades\RateLimiter;
+    use Illuminate\Support\Facades\Session;
     use Illuminate\Support\ServiceProvider;
     use Illuminate\Support\Str;
     use Laravel\Fortify\Fortify;
@@ -44,32 +45,38 @@
         public function boot(): void
         {
             Fortify::authenticateUsing(function (Request $request) {
-                // User Authentication
                 $user = User::whereEmail($request->email)->first();
 
                 if ($user && Hash::check($request->password, $user->password)) {
                     if ($user->is_active) {
-
                         return $user;
                     } else {
-
+                        Session::flash('toast', [
+                            'type' => 'warning',
+                            'message' => __('Your account is not activated yet. Please activate your account.'),
+                        ]);
                         return null;
                     }
                 }
 
-                // Rate limiters
                 RateLimiter::hit($this->throttleKey($request));
 
                 if (RateLimiter::tooManyAttempts($this->throttleKey($request), 5)) {
-
                     event(new Lockout($request));
-
                     $available = RateLimiter::availableIn($this->throttleKey($request));
 
+                    Session::flash('toast', [
+                        'type' => 'danger',
+                        'message' => __('Too many login attempts. Please try again in :time seconds.', ['time' => $available]),
+                    ]);
 
                     return null;
                 }
 
+                Session::flash('toast', [
+                    'type' => 'danger',
+                    'message' => __('The provided credentials are incorrect.'),
+                ]);
                 return null;
             });
 
