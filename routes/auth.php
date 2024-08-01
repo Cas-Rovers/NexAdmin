@@ -1,6 +1,7 @@
 <?php
 
     use App\Http\Controllers\Admin\DashboardController;
+    use App\Http\Controllers\Admin\LanguageController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -15,5 +16,7 @@
     */
 
     Route::middleware('auth')->prefix('admin')->group(function () {
+        Route::get('language/{locale}', [LanguageController::class, 'language'])->name('language.switch');
+
         Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
     });

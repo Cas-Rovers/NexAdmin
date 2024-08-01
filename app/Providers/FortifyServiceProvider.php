@@ -53,7 +53,7 @@
                     } else {
                         Session::flash('toast', [
                             'type' => 'warning',
-                            'message' => __('Your account is not activated yet. Please activate your account.'),
+                            'message' => __("admin.auth.inactive_account"),
                         ]);
                         return null;
                     }
@@ -67,7 +67,7 @@
 
                     Session::flash('toast', [
                         'type' => 'danger',
-                        'message' => __('Too many login attempts. Please try again in :time seconds.', ['time' => $available]),
+                        'message' => __("admin.auth.too_many_attempts", ['time' => $available]),
                     ]);
 
                     return null;
@@ -75,7 +75,7 @@
 
                 Session::flash('toast', [
                     'type' => 'danger',
-                    'message' => __('The provided credentials are incorrect.'),
+                    'message' => __("admin.auth.invalid_credentials"),
                 ]);
                 return null;
             });

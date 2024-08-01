@@ -1,0 +1,17 @@
+.language-switcher {
+    .dropdown-btn {
+        &::after {
+            content: "\f078"; /* Font Awesome chevron-down icon code */
+            font-family: "Font Awesome 5 Free", sans-serif; /* Ensure Font Awesome is used */
+            font-weight: 900; /* Required for solid icons */
+            transition: transform 0.2s ease-in-out;
+            border-top: none;
+            vertical-align: 0;
+        }
+        &.show {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

@@ -5,7 +5,10 @@
             <i class="fa-solid fa-bars-staggered fa-2x text-primary cursor-pointer"></i>
         </div>
         <!-- End sidebar close btn -->
-        <div class="ms-auto d-inline-flex align-items-center">
+        <div class="ms-auto d-inline-flex align-items-center position-relative gap-4">
+            <!-- Language Switcher -->
+            <x-admin::LanguageSwitcher />
+            <!-- End Language Switcher -->
             <!-- Profile Info -->
             <div class="mx-2 profile-info-wrapper">
                 <div x-data="{ dropdownOpen: false }" class="position-relative d-flex align-items-center gap-2">

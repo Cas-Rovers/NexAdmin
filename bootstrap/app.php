@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Middleware\Localization;
     use Illuminate\Foundation\Application;
     use Illuminate\Foundation\Configuration\Exceptions;
     use Illuminate\Foundation\Configuration\Middleware;
@@ -15,6 +16,9 @@
             health: '/up',
         )
         ->withMiddleware(function (Middleware $middleware) {
+            $middleware->web(append: [
+               Localization::class
+            ]);
             $middleware->alias([
                 'role' => RoleMiddleware::class,
                 'permission' => PermissionMiddleware::class,
