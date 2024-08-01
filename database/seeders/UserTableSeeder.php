@@ -19,7 +19,7 @@
                 'last_name' => 'Doe van',
                 'email' => 'johnvandoe@example.com',
                 'is_active' => true,
-            ]);
+            ])->assignRole('Super Admin');
 
             User::factory()->create([
                 'first_name' => 'Jenna',

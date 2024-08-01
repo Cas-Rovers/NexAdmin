@@ -14,6 +14,7 @@
         public function run(): void
         {
             $this->call([
+                RolesAndPermissionsSeeder::class,
                 UserTableSeeder::class,
             ]);
         }

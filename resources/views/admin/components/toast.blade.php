@@ -6,7 +6,7 @@
     @endphp
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            showToast('{{ $type }}', '{{ ucfirst($type) }}', @json($message));
+            showToast('{{ $type }}', '', @json($message));
         });
     </script>
 @endif
