@@ -55,7 +55,7 @@
                     <a href=""
                        class="nav-link @if (request()->routeIs('admin.users')) active @endif d-flex align-items-center gap-2">
                         <i class="fa-solid fa-users"></i>
-                        <span>Users</span>
+                        <span>{{ __('admin.sidebar.users_tab') }}</span>
                     </a>
                 </li>
             </ul>

@@ -11,4 +11,18 @@
             // Message shown when credentials provided are incorrect
             'invalid_credentials' => 'The provided credentials are incorrect.',
         ],
+
+        'sidebar' => [
+            // the user's tab located inside the sidebar.
+          'users_tab' => 'Users',
+        ],
+
+        'top-navbar' => [
+          'profile-information' => [
+              'avatar_alt' => 'Profile image of',
+              'edit_account' => 'Edit account',
+              'logout' => 'Logout',
+
+          ],
+        ],
     ];

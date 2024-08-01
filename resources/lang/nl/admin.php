@@ -11,4 +11,16 @@
             // Bericht weergegeven wanneer de opgegeven referenties onjuist zijn
             'invalid_credentials' => 'De opgegeven referenties zijn onjuist.',
         ],
+
+        'sidebar' => [
+            'users_tab' => 'Gebruikers',
+        ],
+
+        'top-navbar' => [
+            'profile-information' => [
+                'avatar_alt' => 'Profielafbeelding van',
+                'edit_account' => 'Account bewerken',
+                'logout' => 'Uitloggen',
+            ],
+        ],
     ];

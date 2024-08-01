@@ -12,7 +12,7 @@
             <!-- Profile Info -->
             <div class="mx-2 profile-info-wrapper">
                 <div x-data="{ dropdownOpen: false }" class="position-relative d-flex align-items-center gap-2">
-                    <img src="{{ auth()->user()->getProfileAvatar() }}" alt="Profile image of {{ auth()->user()->full_name }}"
+                    <img src="{{ auth()->user()->getProfileAvatar() }}" alt="{{__('admin.top-navbar.profile-information.avatar_alt')}} {{ auth()->user()->full_name }}"
                          class="rounded-5 cursor-pointer object-fit-cover profile-avatar" width="42px" height="42px" @click="dropdownOpen = !dropdownOpen">
                     <div class="d-flex flex-column gap-0 profile-information">
                         <strong>{{ auth()->user()->full_name }}</strong>
@@ -29,7 +29,7 @@
                             <div>
                                 <a href="" class="d-block px-2 py-1 text-decoration-none mw-100 user-dropdown-hover text-white">
                                     <i class="fa fa-cog me-2"></i>
-                                    {{ __('Edit account') }}
+                                    {{ __('admin.top-navbar.profile-information.edit_account') }}
                                 </a>
                             </div>
 
@@ -37,7 +37,7 @@
                                 @csrf
                                 <button type="submit" class="border-0 user-dropdown-hover bg-secondary w-100 py-1 text-start px-2 text-danger text-decoration-none">
                                     <i class="fa-solid fa-arrow-right-from-bracket me-2"></i>
-                                    {{ __('Logout') }}
+                                    {{ __('admin.top-navbar.profile-information.logout') }}
                                 </button>
                             </form>
                         </div>
