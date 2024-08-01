@@ -9,30 +9,34 @@
     @vite('resources/assets/admin/sass/app.scss')
 </head>
 <body data-bs-theme="dark">
-<div class="container-fluid">
-    <div class="row">
-        @auth
-            <div class="col-md-2">
-                {{-- Sidebar here --}}
+@auth
+    <main class="d-flex flex-nowrap" id="top">
+        @include('admin.layouts.sidebar')
+        <div class="content w-100">
+            @include('admin.layouts.top-navbar')
+
+            <div class="my-3">
+                <x-admin::toast/>
             </div>
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                {{-- Top navbar here --}}
-                <x-admin::toast />
-                <div class="content">
-                    @yield('content')
-                </div>
-            </main>
-        @endauth
-        @guest
-            <div class="col-md-12">
-                <x-admin::toast />
-                <div class="content">
-                    @yield('content')
-                </div>
+
+            <section class="my-3">
+                @yield('content')
+            </section>
+        </div>
+    </main>
+@endauth
+@guest
+    <main>
+        <div class="content w-100">
+            <div class="">
+                <x-admin::toast/>
             </div>
-        @endguest
-    </div>
-</div>
+            <section>
+                @yield('content')
+            </section>
+        </div>
+    </main>
+@endguest
 
 @vite('resources/assets/admin/js/app.js')
 </body>

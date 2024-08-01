@@ -9,6 +9,8 @@
 @import "general";
 
 // Component imports...
+@import "components/sidebar";
+@import "components/top-navbar";
 
 // Page Imports...
 @import "pages/auth/login";

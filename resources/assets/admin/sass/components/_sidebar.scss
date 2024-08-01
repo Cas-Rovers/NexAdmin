@@ -1,0 +1,9 @@
+.sidebar {
+    &.collapsed {
+        .nav-content {
+            span {
+                display: none;
+            }
+        }
+    }
+}
